@@ -152,10 +152,10 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
 }
 
 if (score <= 5) {
-  console.log(chalk.bgGreen("Final score : ", score));
+  console.log(chalk.bgRed("Final score : ", score));
   console.log("Seems like you need to know BTS more!!");
 } else {
-  console.log(chalk.bgRed("Final score : ", score));
+  console.log(chalk.bgGreen("Final score : ", score));
   console.log("You are indeed a TRUE ARMY!!");
 }
 console.log(chalk.yellow("List of high scorers : "));
