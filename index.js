@@ -1,7 +1,7 @@
 var chalk = require("chalk");
 var readlineSync = require("readline-sync");
 
-var playerName = readlineSync.keyInYN("What is your name? ");
+var playerName = readlineSync.question("What is your name? ");
 console.log(
   chalk.blue(
     "-------------------------------------------------------------------"
@@ -99,7 +99,7 @@ function validateAnswer(question) {
   for (var j = 1; j <= question.options.length; j = j + 1) {
     console.log(j + ".", question.options[j - 1]);
   }
-  var playerAnswer = readlineSync.keyInYN("Choose any one option ");
+  var playerAnswer = readlineSync.question("Choose any one option ");
 
   if (playerAnswer == question.answer) {
     score = score + 1;
