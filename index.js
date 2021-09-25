@@ -31,33 +31,33 @@ var btsQuiz = [
   {
     question: "What does BTS stand for?",
     options: ["Behind the scene", "Bangtan Sonyeondan", "Burn the stage"],
-    answer: 2,
+    answer: 1,
   },
   {
     question: "How many members are in BTS?",
     options: ["Six", "Seven", "Eight", "Nine"],
-    answer: 2,
+    answer: 1,
   },
   {
     question: "Which member is the maknae (youngest) of the group?",
     options: ["Suga", "Jimin", "RM", "Jungkook"],
-    answer: 4,
+    answer: 3,
   },
   {
     question: "Which of the following members is the leader of the group?",
     options: ["JHope", "Suga", "RM", "V"],
-    answer: 3,
+    answer: 2,
   },
   {
     question:
       "Which member is the visual of the group and is also known as “Worldwide Handsome?”",
     options: ["Jungkook", "Jimin", "Jin", "Kim Taehyung"],
-    answer: 4,
+    answer: 3,
   },
   {
     question: "During which month and year did BTS debut?",
     options: ["June 2016", "June 2013", "July 2015", "July 2014"],
-    answer: 2,
+    answer: 1,
   },
   {
     question: "What K-Pop entertainment is BTS signed under?",
@@ -67,7 +67,7 @@ var btsQuiz = [
       "Bangtan Hit Entertainment",
       "BTS Entertainment",
     ],
-    answer: 2,
+    answer: 1,
   },
   {
     question:
@@ -78,17 +78,17 @@ var btsQuiz = [
       "The Suite Life of Zack & Cody",
       "The Office",
     ],
-    answer: 2,
+    answer: 1,
   },
   {
     question: "Who is the shortest member in BTS?",
     options: ["Jungkook", "Jimin", "Suga", "V"],
-    answer: 2,
+    answer: 1,
   },
   {
     question: "Which BTS member has the smallest hands?",
     options: ["RM", "Jimin", "Suga", "Jhope"],
-    answer: 2,
+    answer: 1,
   },
 ];
 var score = 0;
