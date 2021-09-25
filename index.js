@@ -87,14 +87,16 @@ function validateAnswer(question)
   if(playerAnswer==question.answer)
   {
     score = score + 1;
-    console.log("Yay! Your answer is correct.");
+    console.log(chalk.green("Yay! Your answer is correct."));
     console.log("Current score : "+score);
+    console.log(chalk.blue("-------------------------------------------------------------------"));
   }
   else
   {
-    console.log("Oops! Your answer is wrong.");
+    console.log(chalk.red("Oops! Your answer is wrong."));
     console.log("It doesn't really seem like you are a BTS fan!!");
-    console.log("The correct answer is "+question.answer);
+    console.log("The correct answer is "+chalk.green(question.options[question.answer-1]));
+    console.log(chalk.blue("-------------------------------------------------------------------"));
   }
 }
 
@@ -102,25 +104,26 @@ for(var i=0;i<btsQuiz.length;i=i+1)
 {
     if(i==0)
     {
-     console.log(chalk.blue("---------------------------------LEVEL 1----------------------------"));
+     console.log(chalk.blue("------------------------------LEVEL 1-------------------------------"));
     }
     if(i==5)
     {
-     console.log(chalk.blue("---------------------------------LEVEL 2----------------------------"));
+     console.log(chalk.blue("------------------------------LEVEL 2-------------------------------"));
     }
     var qts = btsQuiz[i];
     validateAnswer(qts);
 }
-console.log("Final score : ",score);
+console.log(chalk.bgGreen("Final score : ",score));
 if(score<=5)
 {
   console.log("Seems like you need to know BTS more!!");
+  
 }
 else
 {
   console.log("You are indeed a TRUE ARMY!!");
 }
-console.log("List of high scorers : ")
+console.log(chalk.yellow("List of high scorers : "));
 for(var i=0;i<highScore.length;i=i+1)
 {
   var player = highScore[i];
