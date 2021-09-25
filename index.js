@@ -94,12 +94,9 @@ var btsQuiz = [
 var score = 0;
 
 function validateAnswer(question) {
-  console.log("Question : " + question.question);
+ 
   console.log("Options : ");
-  for (var j = 1; j <= question.options.length; j = j + 1) {
-    console.log(j + ".", question.options[j - 1]);
-  }
-  var playerAnswer = readlineSync.question("Choose any one option ");
+  var playerAnswer = readlineSync.keyInSelect(question.options,question.question);
 
   if (playerAnswer == question.answer) {
     score = score + 1;
@@ -140,6 +137,7 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
       )
     );
   }
+  console.log("Question : "+(i+1));
   var qts = btsQuiz[i];
   validateAnswer(qts);
 }
