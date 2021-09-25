@@ -8,16 +8,16 @@ console.log(
   )
 );
 console.log(
-  chalk.cyan("Welcome", playerName + "! Let's see if you are a TRUE ARMY")
+  chalk.green("Welcome", playerName + "! Let's see if you are a TRUE ARMY")
 );
 console.log("");
 console.log(
-  chalk.cyan(
+  chalk.green(
     "There are 2 levels in this quiz, each containing a set of 5 questions."
   )
 );
 console.log(
-  chalk.cyan(
+  chalk.green(
     "If you call yourself a BTS fan, then u should beat the high score!!!!"
   )
 );
