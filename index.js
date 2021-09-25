@@ -7,13 +7,19 @@ console.log(
     "-------------------------------------------------------------------"
   )
 );
-console.log("Welcome", playerName + "! Let's see if you are a TRUE ARMY");
+console.log(
+  chalk.cyan("Welcome", playerName + "! Let's see if you are a TRUE ARMY")
+);
 console.log("");
 console.log(
-  "There are 2 levels in this quiz, each containing a set of 5 questions."
+  chalk.cyan(
+    "There are 2 levels in this quiz, each containing a set of 5 questions."
+  )
 );
 console.log(
-  "If you call yourself a BTS fan, then u should beat the high score!!!!"
+  chalk.cyan(
+    "If you call yourself a BTS fan, then u should beat the high score!!!!"
+  )
 );
 
 var highScore = [
@@ -94,9 +100,11 @@ var btsQuiz = [
 var score = 0;
 
 function validateAnswer(question) {
- 
   console.log("Options : ");
-  var playerAnswer = readlineSync.keyInSelect(question.options,question.question);
+  var playerAnswer = readlineSync.keyInSelect(
+    question.options,
+    chalk.magenta(question.question)
+  );
 
   if (playerAnswer == question.answer) {
     score = score + 1;
@@ -131,20 +139,23 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
     );
   }
   if (i == 5) {
+    console.log(chalk.green("Congratulations! You advanced to level 2"));
     console.log(
       chalk.blue(
         "------------------------------LEVEL 2-------------------------------"
       )
     );
   }
-  console.log("Question : "+(i+1));
+  console.log("Question : " + (i + 1));
   var qts = btsQuiz[i];
   validateAnswer(qts);
 }
-console.log(chalk.bgGreen("Final score : ", score));
+
 if (score <= 5) {
+  console.log(chalk.bgGreen("Final score : ", score));
   console.log("Seems like you need to know BTS more!!");
 } else {
+  console.log(chalk.bgRed("Final score : ", score));
   console.log("You are indeed a TRUE ARMY!!");
 }
 console.log(chalk.yellow("List of high scorers : "));
