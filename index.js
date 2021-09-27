@@ -120,7 +120,7 @@ function validateAnswer(question) {
     console.log("It doesn't really seem like you are a BTS fan!!");
     console.log(
       "The correct answer is " +
-        chalk.green(question.options[question.answer - 1])
+      chalk.green(question.options[question.answer - 1])
     );
     console.log(
       chalk.blue(
@@ -138,7 +138,7 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
       )
     );
   }
-  if (i == 5) {
+  if (i == 5 && score == 5) {
     console.log(chalk.green("Congratulations! You advanced to level 2"));
     console.log(
       chalk.blue(
@@ -146,9 +146,15 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
       )
     );
   }
-  console.log("Question : " + (i + 1));
-  var qts = btsQuiz[i];
-  validateAnswer(qts);
+  else if (i == 5 && score < 5) {
+    console.log(chalk.red("Oops you failed! You couldn't reach level 2"));
+  }
+
+  if ((i < 5 && score < 5) || (i >= 5 && score >= 5)) {
+    console.log("Question : " + (i + 1));
+    var qts = btsQuiz[i];
+    validateAnswer(qts);
+  }
 }
 
 if (score <= 5) {
@@ -157,13 +163,13 @@ if (score <= 5) {
 } else {
   console.log(chalk.bgGreen("Final score : ", score));
   console.log("You are indeed a TRUE ARMY!!");
-}
-console.log(chalk.yellow("List of high scorers : "));
-for (var i = 0; i < highScore.length; i = i + 1) {
-  var player = highScore[i];
-  console.log("Name : " + player.name, "   Score : " + player.score);
-}
+  console.log(chalk.yellow("List of high scorers : "));
+  for (var i = 0; i < highScore.length; i = i + 1) {
+    var player = highScore[i];
+    console.log("Name : " + player.name, "   Score : " + player.score);
+  }
 
-console.log(
-  "If you scored a 10/10 then update me, I'll add your name in the list"
-);
+  console.log(
+    "If you scored a 10/10 then update me, I'll add your name in the list"
+  );
+}
