@@ -36,34 +36,39 @@ var highScore = [
 var btsQuiz = [
   {
     question: "What does BTS stand for?",
-    options: ["Behind the scene", "Bangtan Sonyeondan", "Burn the stage"],
-    answer: 1,
+    options: [
+      "Behind the scene",
+      "Bangtan Sonyeondan",
+      "Burn the stage",
+      "Big hit boys",
+    ],
+    answer: 2,
   },
   {
     question: "How many members are in BTS?",
     options: ["Six", "Seven", "Eight", "Nine"],
-    answer: 1,
+    answer: 2,
   },
   {
     question: "Which member is the maknae (youngest) of the group?",
     options: ["Suga", "Jimin", "RM", "Jungkook"],
-    answer: 3,
+    answer: 4,
   },
   {
     question: "Which of the following members is the leader of the group?",
     options: ["JHope", "Suga", "RM", "V"],
-    answer: 2,
+    answer: 3,
   },
   {
     question:
       "Which member is the visual of the group and is also known as “Worldwide Handsome?”",
     options: ["Jungkook", "Jimin", "Jin", "Kim Taehyung"],
-    answer: 3,
+    answer: 4,
   },
   {
     question: "During which month and year did BTS debut?",
     options: ["June 2016", "June 2013", "July 2015", "July 2014"],
-    answer: 1,
+    answer: 2,
   },
   {
     question: "What K-Pop entertainment is BTS signed under?",
@@ -73,7 +78,7 @@ var btsQuiz = [
       "Bangtan Hit Entertainment",
       "BTS Entertainment",
     ],
-    answer: 1,
+    answer: 2,
   },
   {
     question:
@@ -84,17 +89,17 @@ var btsQuiz = [
       "The Suite Life of Zack & Cody",
       "The Office",
     ],
-    answer: 1,
+    answer: 2,
   },
   {
     question: "Who is the shortest member in BTS?",
     options: ["Jungkook", "Jimin", "Suga", "V"],
-    answer: 1,
+    answer: 2,
   },
   {
     question: "Which BTS member has the smallest hands?",
     options: ["RM", "Jimin", "Suga", "Jhope"],
-    answer: 1,
+    answer: 2,
   },
 ];
 var score = 0;
@@ -105,8 +110,8 @@ function validateAnswer(question) {
     question.options,
     chalk.magenta(question.question)
   );
-
-  if (playerAnswer == question.answer) {
+  playerAnswer = playerAnswer + 1;
+  if (playerAnswer === question.answer) {
     score = score + 1;
     console.log(chalk.green("Yay! Your answer is correct."));
     console.log("Current score : " + score);
@@ -120,7 +125,7 @@ function validateAnswer(question) {
     console.log("It doesn't really seem like you are a BTS fan!!");
     console.log(
       "The correct answer is " +
-      chalk.green(question.options[question.answer - 1])
+        chalk.green(question.options[question.answer - 1])
     );
     console.log(
       chalk.blue(
@@ -145,8 +150,8 @@ for (var i = 0; i < btsQuiz.length; i = i + 1) {
         "------------------------------LEVEL 2-------------------------------"
       )
     );
-  }
-  else if (i == 5 && score < 5) {
+  } else if (i == 5 && score < 5) {
+    // console.log(score);
     console.log(chalk.red("Oops you failed! You couldn't reach level 2"));
   }
 
